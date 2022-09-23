@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/studentdb
+      auto-index-creation: true
+
+
+pageable:
+  default:
+    value:
+      page: 0
+      size: 10
+      sortBy: crTime
