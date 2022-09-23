@@ -31,7 +31,7 @@ import java.util.UUID;
 @OpenAPIDefinition(info = @Info(
         title = "Student API",
         version = "1.0.0",
-        description = "Student Details with from MongoDB",
+        description = "Student service with MongoDB",
         contact = @Contact(
                 name = "Sovan Mukherjee",
                 email = "sovanm10@gmail.com")
