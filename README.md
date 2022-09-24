@@ -77,4 +77,126 @@ Syntax: db.COLLECTION_NAME.getIndexes()
 
 ![image](https://user-images.githubusercontent.com/26097904/192108683-86528143-7f9b-4337-a330-e7ee8c18e9f6.gif)
 
+## Add TTL on mongoDB
+
+1. create TTL Index
+
+Syntax: db.COLLECTION_NAME.createIndex({"KEY": 1},{expireAfter: "3600s"})
+
+-OR - 
+
+db.COLLECTION_NAME.createIndex( { "KEY": 1 }, { expireAfterSeconds: 3600 } )
+
+Example: db.student.createIndex({"crTime": 1},{expireAfter: "3600s"})
+
+<img width="1276" alt="image" src="https://user-images.githubusercontent.com/26097904/192109906-df49cbda-a624-46a3-8570-1265bab36ebe.png">
+
+## Run Application
+
+Local Swagger UI: http://localhost:8080/swagger-ui/index.html
+<img width="1458" alt="image" src="https://user-images.githubusercontent.com/26097904/192110061-be0ae4a3-8d87-45db-813b-05f80f8b9c72.png">
+
+> Save Student
+<img width="1444" alt="image" src="https://user-images.githubusercontent.com/26097904/192110150-bb4545c5-7db5-4662-b74c-38697ffd18a8.png">
+You can check data in Compass
+<img width="1279" alt="image" src="https://user-images.githubusercontent.com/26097904/192110206-dba6afb2-c22d-4942-9d8e-1a96d848c619.png">
+<img width="1283" alt="image" src="https://user-images.githubusercontent.com/26097904/192110758-8d7ad312-1e4d-4cab-9214-9dc4184a885c.png">
+
+> Get Students By className
+
+Request payload
+<img width="1437" alt="image" src="https://user-images.githubusercontent.com/26097904/192110421-1576324c-fd7c-411c-b797-3461261075b7.png">
+Response payload
+
+```
+{
+  "content": [
+    {
+      "id": "1971a4ab-5226-4f81-b3fc-ffde69aa8277",
+      "rollNumber": 1,
+      "contact": {
+        "emailId": "xxxx@gmail.com",
+        "mobile": "9999999999"
+      },
+      "vsningFlds": {
+        "createdBy": "abc",
+        "crTime": "2022-09-24T22:34:11.826"
+      }
+    },
+    {
+      "id": "cdb5d2e7-36ee-40c8-bc66-6eefa5b7d503",
+      "rollNumber": 2,
+      "contact": {
+        "emailId": "xxxx@gmail.com",
+        "mobile": "9999999999"
+      },
+      "vsningFlds": {
+        "createdBy": "abc",
+        "crTime": "2022-09-24T22:37:47.863"
+      }
+    },
+    {
+      "id": "a3fc979f-3835-4e19-a374-8ca849711144",
+      "rollNumber": 3,
+      "contact": {
+        "emailId": "xxxx@gmail.com",
+        "mobile": "9999999999"
+      },
+      "vsningFlds": {
+        "createdBy": "abc",
+        "crTime": "2022-09-24T22:38:19.39"
+      }
+    },
+    {
+      "id": "db30ce97-d29b-437f-b754-15354ef8b861",
+      "rollNumber": 4,
+      "contact": {
+        "emailId": "xxxx@gmail.com",
+        "mobile": "9999999999"
+      },
+      "vsningFlds": {
+        "createdBy": "abc",
+        "crTime": "2022-09-24T22:39:24.644"
+      }
+    },
+    {
+      "id": "c71bc980-1476-474f-a709-43bd1a28f20a",
+      "rollNumber": 5,
+      "contact": {
+        "emailId": "xxxx@gmail.com",
+        "mobile": "9999999999"
+      },
+      "vsningFlds": {
+        "createdBy": "abc",
+        "crTime": "2022-09-24T22:39:50.437"
+      }
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 10,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 5,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "numberOfElements": 5,
+  "empty": false
+}
+```
 
